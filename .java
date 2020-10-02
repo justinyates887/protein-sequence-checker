@@ -18,13 +18,6 @@ public class DNA{
     run.divisibleTest(dna);
     run.firstCodon(dna);
     run.lastCodon(dna);
-
-    if(run.divisibleTest(dna) && run.firstCodon(dna) && run.lastCodon(dna) == true){
-      run.returnProtein(dna);
-    }
-    else{
-      System.out.println("Not a protein.");
-    }
   }
 
   public String scannerIn(){
@@ -40,7 +33,7 @@ public class DNA{
       return true;
     }
     else{
-      System.out.println("Your sequence is not divisible by three, %n so it is not a protein!");
+      System.out.println("Your sequence is not divisible by three, \nso it is not a protein!");
       return false;
     }
   }
@@ -51,16 +44,18 @@ public class DNA{
       return true;
     }
     else{
-      System.out.println("Your sequence does not begin with ATG, %n so it is not a protein.");
+      System.out.println("Your sequence does not begin with ATG, \nso it is not a protein.");
       return false;
     }
   }
 
   public boolean lastCodon(String dna){
     if (dna.endsWith("TGA")){
+      System.out.println("Your sequence ends with TGA!");
       return true;
     }
     else{
+      System.out.println("Your system does not end with TGA.");
       return false;
     }
   }
