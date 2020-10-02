@@ -40,26 +40,24 @@ public class DNA{
       return true;
     }
     else{
-      System.out.println("Your sequence is not divisible by three, %nso it is not a protein!");
+      System.out.println("Your sequence is not divisible by three, %n so it is not a protein!");
       return false;
     }
   }
 
   public boolean firstCodon(String dna){
-    if (dna.charAt(0) == ('A') && dna.charAt(1) == ('T') && dna.charAt(2) == ('G')){
+    if (dna.startsWith("ATG")){
       System.out.println("Your sequence begins with ATG!");
       return true;
     }
     else{
-      System.out.println("Your sequence does not begin with ATG, %nso it is not a protein.");
+      System.out.println("Your sequence does not begin with ATG, %n so it is not a protein.");
       return false;
     }
   }
 
   public boolean lastCodon(String dna){
-    String lastThree = dna.substring(dna.length() - 3);
-
-    if (lastThree.charAt(0) == ('T') && lastThree.charAt(1) == ('G') && lastThree.charAt(2) == ('A')){
+    if (dna.endsWith("TGA")){
       return true;
     }
     else{
