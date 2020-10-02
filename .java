@@ -14,10 +14,14 @@ public class DNA{
     DNA run = new DNA();
     
     String dna = run.scannerIn();
+    
+    if(run.divisibleTest(dna) && run.firstCodon(dna) && run.lastCodon(dna) == true){
+      System.out.println("You have a protein!");
+    }
+    else{
+      System.out.println("You do not have a protein.");
+    }
 
-    run.divisibleTest(dna);
-    run.firstCodon(dna);
-    run.lastCodon(dna);
   }
 
   public String scannerIn(){
