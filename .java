@@ -17,6 +17,7 @@ public class DNA{
     
     if(run.divisibleTest(dna) && run.firstCodon(dna) && run.lastCodon(dna) == true){
       System.out.println("You have a protein!");
+      run.returnProtein(dna);
     }
     else{
       System.out.println("You do not have a protein.");
@@ -68,7 +69,9 @@ public class DNA{
     String protein1 = dna.substring(dna.length() - 3);
     String protein2 = dna.substring(0,3);
     String proteinConcat = protein1.concat(protein2);
-    System.out.println("Your protein sequence is: " + proteinConcat);
+    String proteinMinusFirst = dna.replace(protein2, "");
+    String proteinMinusLast = proteinMinusFirst.replace(protein1, "");
+    System.out.println("Your protein sequence is: " + proteinMinusLast);
     return proteinConcat;
   }
 
